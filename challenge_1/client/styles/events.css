@@ -44,6 +44,8 @@
   color: #525252;
   width: calc(100% - 140px);
   display: inline-block;
+  overflow:hidden;
+  white-space: wrap;
 }
 
 @media all and (min-width: 1000px) {

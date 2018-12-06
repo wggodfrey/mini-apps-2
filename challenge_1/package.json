@@ -2,7 +2,6 @@
   "name": "challenge_1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start:dev": "json-server --id _id --watch database/db.json",
     "build:dev": "webpack -d --watch",
