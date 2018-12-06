@@ -1,0 +1,15 @@
+#banner {
+  width: 100%;
+  padding: 0;
+  background: #525252;
+  height: 50px;
+}
+
+#banner .title {
+  width: calc(50% - 80px);
+  padding: 13px 0px 13px 40px;
+  float: left;
+  color: #ffffff;
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+}

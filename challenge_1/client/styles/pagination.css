@@ -1,0 +1,48 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1000px;
+  background: #525252;
+  position: absolute;
+  bottom: 30px;
+  list-style-type: none;
+  background: #525252;
+  padding-inline-start: 0px;
+  justify-content: space-between;
+}
+
+.pagination li {
+  padding: 15px 0px;
+  width: 100%;
+  float: left;
+  text-align: center;
+  border-right: solid 2px #fff;
+}
+
+.pagination li a {
+  width: 100%;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+  cursor: pointer;
+}
+
+.pagination li.active {
+  background: #000;
+}
+
+li.previous.disabled  {
+  background: #d3d3d3;
+}
+
+
+@media all and (min-width: 1000px) {
+  .pagination {
+    margin: 0px calc((100% - 1000px)/2);
+  }
+}

@@ -1,1 +1,5 @@
-public/app.js
+node-modules/
+
+public/bundle.js
+
+package-lock.json

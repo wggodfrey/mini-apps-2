@@ -1,0 +1,53 @@
+#events {
+  position: absolute;
+  top: 60px;
+  height: calc(100% - 160px);
+  width: 100%;
+  max-width: 1000px;
+  overflow-y: scroll;
+}
+
+#events .record {
+  margin: 5px 0px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  background: #fff;
+  min-height: 55px;
+}
+
+#events .record .context {
+  position: relative;
+  top: -2px;
+  color: #000;
+  width: 130px;
+  height: 100%;
+  display: inline-block;
+  float: left;
+}
+
+#events .record .place {
+  width: 100%;
+  height: 15px;
+  font-size: 14px;
+}
+
+#events .record .year {
+  width: 100%;
+  height: 40px;
+  font-size: 32px;
+}
+
+#events .record .desc {
+  color: #525252;
+  width: calc(100% - 130px);
+  display: inline-block;
+}
+
+@media all and (min-width: 1000px) {
+  #events {
+    margin: 0px calc((100% - 1000px)/2);
+  }
+}
