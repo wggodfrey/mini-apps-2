@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "json-server --watch database/db.json",
+    "start:dev": "json-server --id _id --watch database/db.json",
     "build:dev": "webpack -d --watch",
     "lint": "eslint --ignore-path .gitignore client/** --fix"
   },

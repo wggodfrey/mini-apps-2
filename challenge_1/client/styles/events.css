@@ -1,7 +1,7 @@
 #events {
   position: absolute;
   top: 60px;
-  height: calc(100% - 160px);
+  height: calc(100% - 150px);
   width: 100%;
   max-width: 1000px;
   overflow-y: scroll;
@@ -20,9 +20,9 @@
 
 #events .record .context {
   position: relative;
-  top: -2px;
+  top: -3px;
   color: #000;
-  width: 130px;
+  width: 140px;
   height: 100%;
   display: inline-block;
   float: left;
@@ -42,7 +42,7 @@
 
 #events .record .desc {
   color: #525252;
-  width: calc(100% - 130px);
+  width: calc(100% - 140px);
   display: inline-block;
 }
 

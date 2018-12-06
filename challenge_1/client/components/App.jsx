@@ -25,6 +25,7 @@ class App extends React.Component {
     this.setState({ 
       searchString,
       searchResults: [],
+      pageCount: 0,
       pageNumber: 1,
     }, () => {
       if (searchString.length >= 3) {

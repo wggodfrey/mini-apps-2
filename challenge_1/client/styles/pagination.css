@@ -3,19 +3,19 @@
   flex-direction: row;
   width: 100%;
   max-width: 1000px;
-  background: #525252;
   position: absolute;
   bottom: 30px;
   list-style-type: none;
-  background: #525252;
   padding-inline-start: 0px;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .pagination li {
   padding: 15px 0px;
   width: 100%;
   float: left;
+  background: #525252;
   text-align: center;
   border-right: solid 2px #fff;
 }
@@ -36,7 +36,7 @@
   background: #000;
 }
 
-li.previous.disabled  {
+li.disabled  {
   background: #d3d3d3;
 }
 
