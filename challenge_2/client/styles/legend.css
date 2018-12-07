@@ -5,7 +5,6 @@
 
   font-family: 'Roboto';
   font-weight: 400;
-  
 }
 
 #legend .metric {
@@ -20,6 +19,7 @@
   float: left;
   width: 100%;
   margin: 3px 0px;
+  cursor: pointer;
 }
 
 #legend .item.active {
@@ -27,7 +27,7 @@
 }
 
 #legend .item.inactive {
-  opacity: 0.75;
+  opacity: 0.4;
 }
 
 
@@ -36,6 +36,7 @@
   float: left;
   width: 13px;
   height: 13px;
+  pointer-events: none;
 }
 
 #legend .item .name {
@@ -45,4 +46,5 @@
 
   font-size: 15px;
   line-height: 14px;
+  pointer-events: none;
 }

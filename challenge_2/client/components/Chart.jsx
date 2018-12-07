@@ -18,6 +18,15 @@ class Chart extends React.Component {
   }
 
   render() {
+
+    const activeCoins = this.props.coins.filter(coin => coin.active);
+    const selectedData = {};
+    for (let key in this.props.data) {
+      if (activeCoins.filter(coin => coin.id === key).length) {
+        selectedData[key] = this.props.data[key].filter(d => d.date >= this.props.selectedRange[0])
+      }
+    }
+
     const margins = { 
       top: 50, 
       right: 0, 
@@ -29,15 +38,15 @@ class Chart extends React.Component {
       height: 500,
     }
     let yMax = 0;
-    for (let key in this.props.data) {
-      let ym = Math.max(...this.props.data[key].map(d => d.value));
+    for (let key in selectedData) {
+      let ym = Math.max(...selectedData[key].map(d => d.value));
       yMax = yMax > ym? yMax: ym; 
     }
     const extents = { 
       yMin: 0,
       yMax: yMax,
-      xMin: timeParse('%Y-%m-%d')(this.props.range[0]),
-      xMax: timeParse('%Y-%m-%d')(this.props.range[1]),
+      xMin: timeParse('%Y-%m-%d')(this.props.selectedRange[0]),
+      xMax: timeParse('%Y-%m-%d')(this.props.selectedRange[1]),
     };
     const xScale  = this.xScale
       .domain([extents.xMin, extents.xMax])
@@ -50,7 +59,6 @@ class Chart extends React.Component {
       .x(d => xScale(timeParse('%Y-%m-%d')(d.date)))
       .y(d => yScale(d.value));
 
-    console.log(this.props.data)
     return (
       <svg width={dimensions.width} height={dimensions.height}>
         <Axes 
@@ -59,9 +67,9 @@ class Chart extends React.Component {
           dimensions={dimensions} 
         />
         <Lines
-          func={lineFn}
-          coins={this.props.coins}
-          data={this.props.data}
+          lineFn={lineFn}
+          coins={activeCoins}
+          data={selectedData}
         />
       </svg>
     )
