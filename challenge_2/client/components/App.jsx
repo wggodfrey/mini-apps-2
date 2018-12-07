@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
-
+import promise from 'bluebird';
 
 import Banner from './Banner';
-import Chart from './Chart';
+import InnerWrapper from './InnerWrapper';
 
 import './../styles/app.css';
 
@@ -18,23 +18,53 @@ class App extends React.Component {
         moment().format('YYYY-MM-DD'),
       ],
       coins: [
-        {name: 'BitCoin', hex: '#fbb157', active: true},
+        {id: 'bpi', name: 'BitCoin', hex: '#fbb157', active: true},
+        {id: 'eth', name: 'Ethereum', hex: '#db7093', active: true},
+        {id: 'bcc', name: 'BitCoin Cash', hex: '#008080', active: true},
+        {id: 'xmr', name: 'Monero', hex: '#4169e1', active: true},
+
       ],
-      data: [],
+      data: {
+        bpi: [],
+        eth: [],
+        bcc: [],
+        xmr: [],
+      },
     };
   }
 
   componentDidMount() {
-    axios.get(`/bpi/${this.state.range[0]}/${this.state.range[1]}`)
-      .then(({data}) => this.setState({data: data.bpi}))
-      .catch(err => console.log(err));
+    let stateData = {};
+    let dataGets = [];
+
+    this.state.coins.forEach(coin => {
+      let get = axios.get(`/${coin.id}/${this.state.range[0]}/${this.state.range[1]}`)
+        .then(({data}) => {
+          if (coin.id === 'bpi') {
+            stateData['bpi'] = Object.keys(data.bpi).map(key => ({date:key, value: data.bpi[key]}));
+          } else {
+            console.log('hi from: ', coin.id);
+            stateData[coin.id] = data.map(d => ({date:moment.unix(d.time).format('YYYY-MM-DD'), value: d.open }));
+          }
+        });
+      dataGets.push(get)
+    });
+
+    promise.all(dataGets)
+      .then(() => {
+        console.log(stateData)
+        this.setState({
+          data: stateData,
+        });
+      });
+
   }
 
   render() {
     return (
       <div>
         <Banner />
-        <Chart 
+        <InnerWrapper 
           coins={this.state.coins} 
           data={this.state.data} 
           range={this.state.range} 
@@ -42,6 +72,6 @@ class App extends React.Component {
       </div>
     )
   }
-}
+};
 
 export default App;

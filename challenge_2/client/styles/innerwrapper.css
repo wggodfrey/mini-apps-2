@@ -1,0 +1,21 @@
+#innerwrapper {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 50px);
+  max-width: 1000px;
+  background: #fff;
+}
+
+#innerwrapper .source {
+  font-size: 11px;
+  font-family: 'Roboto';
+  color: #a9a9a9;
+  margin: 0px 50px 0px 0px;
+  float: right;
+}
+
+@media all and (min-width: 1000px) {
+  #innerwrapper {
+    margin: 0px calc((100% - 1000px)/2);
+  }
+}

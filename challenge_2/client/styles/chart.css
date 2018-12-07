@@ -1,13 +1,10 @@
 #chart {
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 50px);
-  max-width: 1000px;
-  background: #fff;
-}
+  display: block;
+  float: left;
+  margin: 20px 0px 0px 40px;
+  width: 150px;
 
-@media all and (min-width: 1000px) {
-  #chart {
-    margin: 0px calc((100% - 1000px)/2);
-  }
+  font-family: 'Roboto';
+  font-weight: 400;
+  
 }

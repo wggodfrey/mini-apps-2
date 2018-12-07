@@ -1,0 +1,9 @@
+.axis path, line {
+  fill: none;
+  stroke: #a9a9a9;
+  stroke-rendering: crispEdges;
+}
+
+g.tick text {
+  font-size: 9px;
+}

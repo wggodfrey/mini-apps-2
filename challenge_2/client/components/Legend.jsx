@@ -14,6 +14,6 @@ const Legend = ({ coins }) => (
       )
     }
   </div>
-)
+);
 
 export default Legend;
