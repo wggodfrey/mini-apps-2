@@ -1,0 +1,53 @@
+.Settings {
+  position: absolute;
+  top: 75px;
+  height: 100px;
+  width: calc(100% - 200px);
+  min-width: 450px;
+  padding: 0px 20px;
+  max-width: 1000px;
+  background: #ffffff;
+}
+
+.Settings .setting {
+  width: calc(100%/2 - 100px);
+  margin: 15px;
+  display: inline-block;
+  float: left;
+}
+
+.Settings .setting .label {
+  font-family: 'Roboto Condensed';
+  margin: 6px 2px;
+  color: #a9a9a9;
+}
+
+.Settings .reset {
+  width: 100px;
+  margin: 47px 15px 18px 25px;
+  display: inline-block;
+  float: left;
+  padding: 11px 0px 9px;
+  text-align: center;
+  background: #87ceeb;
+  color: #efefef;
+  cursor: pointer;
+  transition: background 1s;
+  border: none;
+  border-radius: 3px;
+}
+
+.Settings .reset:hover {
+  background: #191970;
+}
+
+.Settings .ui.fluid.dropdown, .Settings .ui.selection.dropdown .menu>.item {
+  padding: 13px 30px 9px 14px !important;
+}
+
+@media all and (min-width: 1000px) {
+  .Settings {
+    width: 800px;
+    margin: 0px calc((100% - 1000px)/2 + 200px) 0px calc((100% - 1000px)/2);
+  }
+}

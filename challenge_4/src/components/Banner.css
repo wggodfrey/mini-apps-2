@@ -1,0 +1,15 @@
+.Banner {
+  width: 100%;
+  padding: 0;
+  background: #525252;
+  height: 50px;
+}
+
+.Banner .title {
+  width: calc(50% - 80px);
+  padding: 16px 0px 15px 40px;
+  float: left;
+  color: #ffffff;
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+}

@@ -1,0 +1,36 @@
+.Board {
+  position: absolute;
+  top: 200px;
+  height: calc(100% - 230px);
+  width: 100%;
+  max-width: 1000px;
+  background: #ffffff;
+  min-width: 650px;
+  min-height: 600px;
+}
+
+.Board .table {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.Board .table.pending {
+  pointer-events: all;
+}
+
+.Board .table.gameover, .Board .table.youwin {
+  pointer-events: none;
+}
+
+.Board .row {
+  display: flex;
+  justify-content: center;
+}
+
+@media all and (min-width: 1000px) {
+  .Board {
+    margin: 0px calc((100% - 1000px)/2);
+  }
+}
