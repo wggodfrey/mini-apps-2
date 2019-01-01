@@ -16,7 +16,7 @@ module.exports = {
         include: path.join(__dirname, '/client'),
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'react', 'stage-0'],
+          presets: ['@babel/preset-react','@babel/preset-env'],
         },
       },
       {

@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname,'./../node_modules')));
 app.use(morgan('combined'));
 
 app.get('/bpi/:start/:end', (req, res) => {
-  let key = 'bpi' + Object.values(req.params).join('');
+  let key = 'bpi' + Object.keys(req.params).map(key => req.params[key]).join('');
   redis.get(key, (err, data) => {
     if (data) {
       res.end(data);
@@ -31,7 +31,7 @@ app.get('/bpi/:start/:end', (req, res) => {
 });
 
 app.get('/:fsym/:start/:end', (req, res) => {
-  let key = Object.values(req.params).join('') + '1';
+  let key = Object.keys(req.params).map(key => req.params[key]).join('') + '1';
   redis.get(key, (err, data) => {
     if (data) {
       res.end(data);

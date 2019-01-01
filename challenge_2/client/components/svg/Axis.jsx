@@ -1,8 +1,9 @@
 import React from 'react';
+
 import * as d3Axis from 'd3-axis';
 import { select as d3Select } from 'd3-selection';
 
-import './../styles/axis.css';
+import './../../styles/axis.css';
 
 class Axis extends React.Component {
 
@@ -19,7 +20,6 @@ class Axis extends React.Component {
     const axis = d3Axis[type]()
       .scale(this.props.scale)
       .ticks(this.props.ticks);
-
     d3Select(this.elem).call(axis);
   }
 

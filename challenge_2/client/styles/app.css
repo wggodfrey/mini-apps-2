@@ -4,3 +4,25 @@ body {
   height: 100%;
   background: #f4f4f4;
 }
+
+#outer-wrapper {
+  position: absolute;
+  width: 100%;
+  max-width: 1000px;
+  height: calc(100% - 50px);
+  background: #fff;
+}
+
+#outer-wrapper .source {
+  font-size: 11px;
+  font-family: 'Roboto';
+  color: #a9a9a9;
+  margin: 0px 50px 0px 0px;
+  float: right;
+}
+
+@media all and (min-width: 1000px) {
+  #outer-wrapper {
+    margin: 0px calc((100% - 1000px)/2);
+  }
+}

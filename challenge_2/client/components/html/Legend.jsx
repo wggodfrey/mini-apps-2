@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './../styles/legend.css';
+import './../../styles/legend.css';
 
 const Legend = ({ coins, toggleCoin }) => (
   <div id='legend'>

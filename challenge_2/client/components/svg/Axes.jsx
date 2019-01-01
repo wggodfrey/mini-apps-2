@@ -2,20 +2,22 @@ import React from 'react';
 
 import Axis from './Axis';
 
-const Axes = ({scales, margins, dimensions}) => {
+const Axes = ({scales, margins, width, height}) => {
+  
   const xProps = {
     orient: 'Bottom',
     scale: scales.xScale,
-    ticks: Math.round(dimensions.width/75),
-    translate: `translate(0, ${dimensions.height - margins.bottom})`,
-    tickSize: dimensions.height - margins.top - margins.bottom,
+    ticks: Math.round(width/75),
+    translate: `translate(0, ${height - margins.bottom})`,
+    tickSize: height - margins.top - margins.bottom,
   };
+  
   const yProps = {
     orient: 'Left',
     scale: scales.yScale,
-    ticks: 14,
+    ticks: Math.round(height/25),
     translate: `translate(${margins.left}, 0)`,
-    tickSize: dimensions.width - margins.left - margins.right,
+    tickSize: width - margins.left - margins.right,
   };
 
   return (

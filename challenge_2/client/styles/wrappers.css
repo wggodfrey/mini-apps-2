@@ -1,0 +1,9 @@
+.wrapper.main {
+  display: inline-block;
+  float: left;
+}
+
+.wrapper.brush {
+  display: inline-block;
+  float: left;
+}

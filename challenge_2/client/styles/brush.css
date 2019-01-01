@@ -1,0 +1,9 @@
+#brush .selection {
+  cursor: pointer;
+  stroke: none;
+}
+
+#brush .handle {
+  fill: #fff;
+  width: 3px;
+}
