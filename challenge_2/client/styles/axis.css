@@ -4,6 +4,6 @@
   stroke-rendering: crispEdges;
 }
 
-g.tick text {
+.axis g.tick text {
   font-size: 9px;
 }

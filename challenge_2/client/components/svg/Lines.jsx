@@ -10,7 +10,7 @@ const Lines = ({coins, data, lineFn}) => (
           d={lineFn(data[i])}
           stroke={coin.hex}
           fill='none'
-          strokeWidth={3}
+          strokeWidth={2}
         />
       )
     }
