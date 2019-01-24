@@ -50,11 +50,6 @@ app.get('/:fsym/:start/:end', (req, res) => {
   });
 });
 
-
-
-
-// https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=31
-
 app.listen(2000, () => {
   console.log('>>>>>>>>>> listening on port 2000');
 });

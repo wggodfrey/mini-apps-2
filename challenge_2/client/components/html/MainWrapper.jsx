@@ -7,7 +7,6 @@ import { timeParse } from 'd3-time-format';
 import ResponsiveWrapper from './ResponsiveWrapper';
 import Legend from './Legend';
 import Axes from './../svg/Axes';
-import Grid from './../svg/Grid';
 import Lines from './../svg/Lines';
 
 import './../../styles/wrappers.css';

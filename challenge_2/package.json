@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "start": "node server/index.js",
     "start:dev": "nodemon server/index.js",
+    "build": "webpack -p",
     "build:dev": "webpack -d --watch",
     "lint": "eslint --ignore-path .gitignore client/** --fix"
   },

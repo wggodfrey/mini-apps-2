@@ -21,9 +21,13 @@ class Brush extends React.Component {
     const brush = d3BrushX()
       .extent([[this.props.margins.left, this.props.margins.top],[this.props.width, this.props.height]])
       .on('start brush end', this.moveBrush.bind(this));
+    this.brush = brush;
     d3Select(this.elem)
       .call(brush)
-      .call(brush.move, [this.props.xScale(timeParse('%Y-%m-%d')(this.props.brushRange[0])), this.props.xScale(timeParse('%Y-%m-%d')(this.props.brushRange[1]))])
+      .call(brush.move, [
+        this.props.xScale(timeParse('%Y-%m-%d')(this.props.brushRange[0])), 
+        this.props.xScale(timeParse('%Y-%m-%d')(this.props.brushRange[1]))
+      ])
   }
 
   moveBrush() {
@@ -36,11 +40,7 @@ class Brush extends React.Component {
   }
 
   render() {
-    const width = this.props.width;
-    const height = this.props.height;
-    const margins = this.props.margins;
-    const xScale = this.props.xScale;
-    const brushRange = this.props.brushRange;
+    const { width, height, margins, xScale, brushRange } = this.props;
 
     return (
       <g
